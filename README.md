@@ -93,6 +93,136 @@ The project includes automated checks for:
 - **CSS Quality**: stylelint
 - **Performance**: Lighthouse CI
 
+## ✅ Quality Checks
+
+### Automated Quality Assurance
+
+The project includes comprehensive quality checks to ensure code standards, accessibility, and performance:
+
+#### HTML Validation
+
+```bash
+npm run lint:html
+```
+
+- **Tool**: html-validate
+- **Purpose**: Validates semantic HTML5 structure
+- **Checks**: WCAG compliance, proper element usage, required attributes
+- **Configuration**: `.htmlvalidate.json`
+
+#### CSS Linting
+
+```bash
+npm run lint:css
+```
+
+- **Tool**: stylelint with stylelint-config-standard
+- **Purpose**: Enforces CSS coding standards and best practices
+- **Features**: Modern CSS syntax, accessibility rules, consistent formatting
+- **Configuration**: `.stylelintrc.json`
+
+#### JavaScript Linting
+
+```bash
+npm run lint:js
+```
+
+- **Tool**: ESLint with accessibility plugin
+- **Purpose**: Enforces JavaScript best practices and accessibility
+- **Features**: ES6+ support, accessibility rules, browser environment
+- **Configuration**: `eslint.config.js`
+
+#### Accessibility Testing
+
+```bash
+npm run lint:a11y    # axe-core automated testing
+npm run a11y         # pa11y accessibility testing
+```
+
+- **Tools**: @axe-core/cli, pa11y
+- **Purpose**: Automated accessibility compliance testing
+- **Standards**: WCAG 2.1 AA compliance
+- **Coverage**: Color contrast, ARIA usage, keyboard navigation, semantic structure
+
+#### Performance Analysis
+
+```bash
+lighthouse http://localhost:4173 --output html --output-path ./lighthouse-report.html
+```
+
+- **Tool**: Lighthouse
+- **Purpose**: Performance, accessibility, SEO, and best practices analysis
+- **Metrics**: Core Web Vitals, accessibility score, SEO optimization
+
+### Comprehensive Quality Check
+
+```bash
+npm run lint
+```
+
+Runs all quality checks in sequence:
+
+1. HTML validation (`lint:html`)
+2. CSS linting (`lint:css`)
+3. JavaScript linting (`lint:js`)
+4. Accessibility testing (`lint:a11y`)
+
+### Pre-commit Quality Gates
+
+The project is configured to maintain high code quality through:
+
+- **Automated validation**: All commits should pass quality checks
+- **Consistent formatting**: Enforced through stylelint and ESLint
+- **Accessibility compliance**: Built-in WCAG 2.1 AA validation
+- **Performance monitoring**: Regular Lighthouse audits recommended
+
+### Quality Standards
+
+#### Accessibility (WCAG 2.1 AA)
+
+- ✅ Semantic HTML structure
+- ✅ Proper heading hierarchy (h1-h6)
+- ✅ ARIA labels and roles
+- ✅ Keyboard navigation support
+- ✅ Color contrast compliance
+- ✅ Alt text for images
+- ✅ Focus management
+
+#### Performance
+
+- ✅ Optimized assets (WebP images, multiple resolutions)
+- ✅ Minified CSS and JavaScript
+- ✅ Efficient CSS (no unused styles)
+- ✅ Modern ES modules
+- ✅ Responsive images
+
+#### Code Standards
+
+- ✅ Modular architecture (CSS and JS)
+- ✅ Consistent naming conventions
+- ✅ Meaningful comments
+- ✅ Error-free validation
+- ✅ Cross-browser compatibility
+
+### Continuous Integration Ready
+
+All quality checks are designed to integrate with CI/CD pipelines:
+
+```yaml
+# Example CI configuration
+- name: Install dependencies
+  run: npm ci
+
+- name: Run quality checks
+  run: npm run lint
+
+- name: Build project
+  run: npm run build
+
+- name: Run accessibility tests
+  run: npm run a11y
+```
+
 ## 📁 Project Structure
 
 ```bash
