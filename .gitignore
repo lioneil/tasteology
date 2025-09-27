@@ -10,6 +10,7 @@ lerna-debug.log*
 docs
 tasks
 .DS_Store
+CLAUDE.md
 
 # yarn v3
 .pnp.*
@@ -19,6 +20,13 @@ tasks
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Dependency directories
+node_modules
+
+# Dist files
+dist
+build
 
 # Vite files
 vite.config.js.timestamp-*

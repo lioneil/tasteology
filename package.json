@@ -1,0 +1,41 @@
+{
+  "name": "tasteology",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A vanilla HTML/CSS/JS implementation of a design mockup featuring a Gallery Block and Cards Block. This project demonstrates production-quality frontend development skills without relying on frameworks or utility libraries.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "a11y": "pa11y http://localhost:4173",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint 'css/**/*.css'",
+    "lint:js": "eslint 'js/**/*.js'",
+    "lint:a11y": "npm run preview & npx axe http://localhost:4173 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@lioneil.github.com:lioneil/tasteology.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/cli": "^4.10.2",
+    "eslint": "^9.36.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "html-validate": "^10.0.0",
+    "lighthouse": "^12.8.2",
+    "pa11y": "^9.0.1",
+    "stylelint": "^16.24.0",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-standard": "^39.0.0",
+    "terser": "^5.44.0",
+    "vite": "^7.1.7"
+  }
+}
