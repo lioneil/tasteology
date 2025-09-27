@@ -1,0 +1,33 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "aria-hidden-body": "error",
+    "aria-label-misuse": "error",
+    "close-attr": "error",
+    "close-order": "error",
+    "deprecated": "error",
+    "deprecated-rule": "error",
+    "doctype-html": "error",
+    "element-permitted-content": "error",
+    "element-required-attributes": "error",
+    "form-dup-name": "error",
+    "heading-level": "error",
+    "meta-refresh": "error",
+    "missing-doctype": "error",
+    "no-conditional-comment": "error",
+    "no-dup-attr": "error",
+    "no-dup-id": "error",
+    "no-redundant-for": "error",
+    "no-self-closing": "off",
+    "no-unknown-elements": "error",
+    "prefer-native-element": "error",
+    "script-element": "error",
+    "svg-focusable": "error",
+    "wcag/h30": "error",
+    "wcag/h32": "error",
+    "wcag/h36": "error",
+    "wcag/h37": "error",
+    "wcag/h67": "error",
+    "wcag/h71": "error"
+  }
+}
