@@ -1,0 +1,11 @@
+/* ==========================================================================
+   Gallery Block Styles
+   ========================================================================== */
+
+.gallery-block {
+  /* Gallery styles will be implemented in Phase 2 */
+  height: 840px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background);
+}

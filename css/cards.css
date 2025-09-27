@@ -1,0 +1,9 @@
+/* ==========================================================================
+   Cards Block Styles
+   ========================================================================== */
+
+.cards-block {
+  /* Cards styles will be implemented in Phase 3 */
+  padding: var(--spacing-lg);
+  background-color: var(--color-background);
+}

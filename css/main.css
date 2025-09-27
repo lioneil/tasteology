@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Tasteology - Main Stylesheet
+   ========================================================================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Import component-specific styles */
+@import url('./gallery.css');
+@import url('./cards.css');
+
+/* CSS Custom Properties (CSS Variables) */
+:root {
+  /* Dark Theme Colors */
+  --color-background: #0e1414;
+  --color-headline: #cf1430;
+  --color-heading: #ffffff;
+  --color-text: #ffffff;
+  --color-text-light: #cccccc;
+  --color-surface: #1a2020;
+  --color-border: #333333;
+
+  /* Typography */
+  --font-family-primary: 'Open Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, sans-serif;
+  --font-family-secondary: georgia, 'Times New Roman', times, serif;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  --line-height-base: 1.5;
+  --line-height-tight: 1.2;
+  --line-height-loose: 1.7;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+
+  /* Layout */
+  --container-max-width: 1440px;
+  --container-padding: 147px;
+  --border-radius: 8px;
+  --border-radius-small: 4px;
+  --border-radius-large: 12px;
+
+  /* Shadows */
+  --shadow-small: 0 1px 3px rgb(0 0 0 / 10%);
+  --shadow-medium: 0 4px 6px rgb(0 0 0 / 10%);
+  --shadow-large: 0 10px 25px rgb(0 0 0 / 15%);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index */
+  --z-index-modal: 1000;
+  --z-index-overlay: 999;
+  --z-index-dropdown: 100;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+/* Reset and normalize */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-primary);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  font-family: var(--font-family-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+/* Headline/overline styles */
+.headline, .overline {
+  color: var(--color-headline);
+  font-family: var(--font-family-primary);
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--color-headline);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: var(--z-index-modal);
+  padding: var(--spacing-sm);
+  background: var(--color-headline);
+  color: var(--color-background);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+}
+
+.skip-to-main:focus {
+  left: var(--spacing-sm);
+  top: var(--spacing-sm);
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+main {
+  min-height: 100vh;
+}
+
+/* Container utility class */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Responsive padding for smaller screens */
+@media (width <= 1440px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+@media (width <= 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (width <= 480px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
