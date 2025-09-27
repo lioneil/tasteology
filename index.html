@@ -29,12 +29,129 @@
   <main>
     <!-- Gallery Block -->
     <section class="gallery-block" aria-labelledby="gallery-heading">
-      <!-- Gallery content will be implemented -->
+      <div class="gallery-container">
+        <!-- Images section (left column) -->
+        <div class="gallery-images">
+          <!-- Large image (left) -->
+          <div class="gallery-left">
+            <button type="button" class="gallery-image-btn" aria-label="Open large image in modal">
+              <picture>
+                <source media="(min-width: 1200px)" srcset="assets/left@3x.webp 3x, assets/left@2x.webp 2x, assets/left.webp 1x">
+                <source media="(min-width: 768px)" srcset="assets/left@2x.webp 2x, assets/left.webp 1x">
+                <img src="assets/left.webp" alt="Main cooking scene with ingredients and preparation" class="gallery-image gallery-image--main" loading="lazy">
+              </picture>
+            </button>
+          </div>
+
+          <!-- Right column with two rows -->
+          <div class="gallery-right-images">
+            <!-- Top right image -->
+            <div class="gallery-top-right">
+              <button type="button" class="gallery-image-btn" aria-label="Open cooking technique image in modal">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="assets/right-top@3x.webp 3x, assets/right-top@2x.webp 2x, assets/right-top.webp 1x">
+                  <source media="(min-width: 768px)" srcset="assets/right-top@2x.webp 2x, assets/right-top.webp 1x">
+                  <img src="assets/right-top.webp" alt="Close-up cooking technique demonstration" class="gallery-image gallery-image--secondary" loading="lazy">
+                </picture>
+              </button>
+            </div>
+
+            <!-- Bottom right image -->
+            <div class="gallery-bottom-right-image">
+              <button type="button" class="gallery-image-btn" aria-label="Open perfect egg technique image in modal">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="assets/right-bottom@3x.webp 3x, assets/right-bottom@2x.webp 2x, assets/right-bottom.webp 1x">
+                  <source media="(min-width: 768px)" srcset="assets/right-bottom@2x.webp 2x, assets/right-bottom.webp 1x">
+                  <img src="assets/right-bottom.webp" alt="Perfect egg cooking demonstration" class="gallery-image gallery-image--secondary" loading="lazy">
+                </picture>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text section (right column) -->
+        <div class="gallery-text">
+          <!-- Content section -->
+          <div class="gallery-content">
+            <h1 id="gallery-heading" class="gallery-title">WHAT DOES COOKING MEAN?</h1>
+            <p class="gallery-description">
+              Is it simply applying heat to a food product? A way of making certain food safe to eat? Or a way to create flavour and make food more appealing? This is just part of what Hervé This, the father of molecular gastronomy, has dedicated his life to finding out. We spoke to him to find out what his experiments have told him. And in the process even discovered the secret to cooking the perfect egg...
+            </p>
+          </div>
+
+          <!-- Bottom tip section -->
+          <div class="gallery-tip">
+            <p class="gallery-tip-overline">The Perfect Egg</p>
+            <h2 class="gallery-tip-title">Keep water between 67 and 68°C for a flavourful, tender yolk</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for enlarged images -->
+      <div class="gallery-modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+        <div class="gallery-modal-overlay"></div>
+        <div class="gallery-modal-content">
+          <button class="gallery-modal-close" aria-label="Close modal" type="button" tabindex="-1">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InRyYW5zcGFyZW50Ii8+PC9zdmc+" alt="" class="gallery-modal-image" id="modal-image">
+          <div class="gallery-modal-caption" id="modal-caption"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Cards Block -->
-    <section class="cards-block" aria-labelledby="cards-heading">
-      <!-- Cards content will be implemented -->
+    <section class="card-group-block" aria-labelledby="card-group-heading">
+      <div class="card-group-container">
+        <h2 id="card-group-heading" class="card-group-title">Taste the Colours</h2>
+
+        <div class="card-list">
+          <!-- Red Card -->
+          <article class="card">
+            <a href="#red-flavours" class="card-link" target="_blank" rel="noopener noreferrer">
+              <div class="card-image">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="assets/tight-top@3x.webp 3x, assets/tight-top@2x.webp 2x, assets/tight-top.webp 1x">
+                  <source media="(min-width: 768px)" srcset="assets/tight-top@2x.webp 2x, assets/tight-top.webp 1x">
+                  <img src="assets/tight-top.webp" alt="Red food coloring on spoon" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="card-title">RED</h3>
+              <p class="card-text">Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.</p>
+            </a>
+          </article>
+
+          <!-- Green Card -->
+          <article class="card">
+            <a href="#green-flavours" class="card-link" target="_blank" rel="noopener noreferrer">
+              <div class="card-image">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="assets/tight-top-2@3x.webp 3x, assets/tight-top-2@2x.webp 2x, assets/tight-top-2.webp 1x">
+                  <source media="(min-width: 768px)" srcset="assets/tight-top-2@2x.webp 2x, assets/tight-top-2.webp 1x">
+                  <img src="assets/tight-top-2.webp" alt="Green food coloring on spoon" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="card-title">Green</h3>
+              <p class="card-text">Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours</p>
+            </a>
+          </article>
+
+          <!-- White Card -->
+          <article class="card">
+            <a href="#white-flavours" class="card-link" target="_blank" rel="noopener noreferrer">
+              <div class="card-image">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="assets/tight-top-3@3x.webp 3x, assets/tight-top-3@2x.webp 2x, assets/tight-top-3.webp 1x">
+                  <source media="(min-width: 768px)" srcset="assets/tight-top-3@2x.webp 2x, assets/tight-top-3.webp 1x">
+                  <img src="assets/tight-top-3.webp" alt="White food coloring on spoon" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="card-title">White</h3>
+              <p class="card-text">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
+            </a>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 

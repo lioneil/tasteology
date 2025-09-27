@@ -39,6 +39,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 4rem;
+  --spacing-section: 7.5rem;
 
   /* Layout */
   --container-max-width: 1440px;
@@ -100,7 +101,9 @@ h1, h2, h3, h4, h5, h6 {
 .headline, .overline {
   color: var(--color-headline);
   font-family: var(--font-family-primary);
+  text-transform: uppercase;
 }
+
 
 /* Focus styles for accessibility */
 :focus {

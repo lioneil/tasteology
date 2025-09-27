@@ -3,10 +3,354 @@
    ========================================================================== */
 
 .gallery-block {
-  /* Gallery styles will be implemented */
-  max-width: 840px;
-  height: 840px;
+  position: relative;
+  max-width: 1146px;
   margin: 0 auto;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-section) 0;
   background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 30px;
+  height: 600px;
+  width: 100%;
+}
+
+/* Images section - contains left image and right image grid */
+.gallery-images {
+  display: grid;
+  grid-template-columns: 372px 372px;
+  gap: 10px;
+  height: 600px;
+}
+
+/* Left side - Main image (372px × 600px) */
+.gallery-left {
+  position: relative;
+  height: 600px;
+}
+
+.gallery-image-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.gallery-image-btn:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+.gallery-image-btn:focus {
+  outline: 2px solid var(--color-headline);
+  outline-offset: 2px;
+}
+
+/* Right images layout - second column with two rows */
+.gallery-right-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 600px;
+}
+
+/* Text section layout */
+.gallery-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 362px;
+}
+
+/* Content section with text */
+.gallery-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Typography styles based on specifications */
+.gallery-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin: 0;
+  flex-grow: 1;
+  display: inline-block;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.gallery-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.43;
+  color: #ffffff;
+  margin: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Bottom right image */
+.gallery-bottom-right-image {
+  flex: 1;
+  height: 295px;
+}
+
+/* Top right image (372px × 295px) */
+.gallery-top-right {
+  flex: 1;
+  height: 295px;
+}
+
+.gallery-top-right .gallery-image-btn,
+.gallery-bottom-right-image .gallery-image-btn {
+  height: 100%;
+  width: 372px;
+}
+
+/* Tip section styling */
+.gallery-tip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery-tip-overline {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #cf1430;
+  margin: 0;
+  flex-grow: 0;
+  text-transform: uppercase;
+}
+
+.gallery-tip-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.43;
+  color: #ffffff;
+  margin: 0;
+  flex-grow: 0;
+}
+
+/* Modal styles */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-index-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-medium), visibility var(--transition-medium);
+}
+
+.gallery-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 80%);
+  cursor: pointer;
+}
+
+.gallery-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-large);
+  transform: translateY(2rem);
+  transition: transform var(--transition-medium);
+}
+
+.gallery-modal.is-open .gallery-modal-content {
+  transform: translateY(0);
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: rgb(0 0 0 / 50%);
+  border: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.gallery-modal-close:hover {
+  background: rgb(0 0 0 / 70%);
+}
+
+.gallery-modal[aria-hidden="true"] .gallery-modal-close {
+  visibility: hidden;
+}
+
+.gallery-modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-modal-caption {
+  padding: var(--spacing-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+/* Responsive Design */
+@media (width <= 1200px) {
+  .gallery-images {
+    grid-template-columns: 310px 310px;
+    gap: 10px;
+    height: 500px;
+  }
+
+  .gallery-right-images {
+    gap: 10px;
+    height: 500px;
+  }
+
+  .gallery-top-right,
+  .gallery-bottom-right-image {
+    height: 245px;
+  }
+
+  .gallery-top-right .gallery-image-btn,
+  .gallery-bottom-right-image .gallery-image-btn {
+    height: 100%;
+    width: 310px;
+  }
+
+  .gallery-title {
+    font-size: 26px;
+  }
+
+  .gallery-description {
+    font-size: 18px;
+  }
+}
+
+@media (width <= 768px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    height: auto;
+  }
+
+  .gallery-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto;
+    gap: 10px;
+    height: auto;
+  }
+
+  .gallery-left {
+    height: 300px;
+  }
+
+  .gallery-right-images {
+    gap: 10px;
+    height: auto;
+  }
+
+  .gallery-text {
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  .gallery-top-right,
+  .gallery-bottom-right-image {
+    height: 200px;
+  }
+
+  .gallery-top-right .gallery-image-btn,
+  .gallery-bottom-right-image .gallery-image-btn {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .gallery-description {
+    font-size: 16px;
+  }
+
+  .gallery-tip-title {
+    font-size: 18px;
+  }
+}
+
+@media (width <= 480px) {
+  .gallery-title {
+    font-size: 22px;
+  }
+
+  .gallery-description {
+    font-size: 15px;
+  }
+
+  .gallery-tip-overline {
+    font-size: 13px;
+  }
+
+  .gallery-tip-title {
+    font-size: 16px;
+  }
+
+  .gallery-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
 }
