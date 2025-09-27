@@ -8,6 +8,7 @@ lerna-debug.log*
 
 # Documents
 docs
+tasks
 .DS_Store
 
 # yarn v3
