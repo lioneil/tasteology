@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .cards-block {
-  /* Cards styles will be implemented in Phase 3 */
+  /* Cards styles will be implemented */
   padding: var(--spacing-lg);
   background-color: var(--color-background);
 }

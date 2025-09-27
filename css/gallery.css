@@ -3,7 +3,8 @@
    ========================================================================== */
 
 .gallery-block {
-  /* Gallery styles will be implemented in Phase 2 */
+  /* Gallery styles will be implemented */
+  max-width: 840px;
   height: 840px;
   margin: 0 auto;
   padding: var(--spacing-lg);
