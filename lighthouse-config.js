@@ -101,6 +101,7 @@ async function runTests() {
 
   } catch (error) {
     console.error('Error running Lighthouse:', error);
+    // eslint-disable-next-line no-undef
     process.exit(1);
   }
 }
