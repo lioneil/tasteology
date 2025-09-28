@@ -282,7 +282,7 @@ This project is evaluated on:
 
 ## 🔗 Links
 
-- **Live Demo**: [To be added after deployment]
+- **Live Demo**: [https://lioneil.github.io/tasteology/](https://lioneil.github.io/tasteology/)
 - **Repository**: [Current repository]
 - **Design Reference**: <https://zpl.io/JQOEee6>
 
