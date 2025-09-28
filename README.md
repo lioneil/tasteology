@@ -1,4 +1,6 @@
-# Tasteology - Frontend Development Assessment
+![Tasteology Screen](./backdrop.png)
+
+# Tasteology
 
 A vanilla HTML/CSS/JS implementation of a design mockup featuring a Gallery Block and Cards Block. This project demonstrates production-quality frontend development skills without relying on frameworks or utility libraries.
 
