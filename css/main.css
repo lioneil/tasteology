@@ -142,7 +142,6 @@ h1, h2, h3, h4, h5, h6 {
   .card-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
   }
 
   /* Flexbox fallback items */
@@ -161,7 +160,6 @@ h1, h2, h3, h4, h5, h6 {
   .card-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
   }
 }
 
@@ -211,6 +209,12 @@ main {
 /* ==========================================================================
    Performance & Loading States
    ========================================================================== */
+
+/* Global image styles - ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Image loading states */
 img.loading {

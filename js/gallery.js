@@ -22,7 +22,9 @@ export function initializeGallery() {
 
   // Handle image button clicks
   imageButtons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const img = button.querySelector('.gallery-image');
       if (img) {
         openModal(img.src, img.alt);
@@ -78,6 +80,9 @@ export function initializeGallery() {
 
     // Prevent background scrolling
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = `-${window.scrollY}px`;
   }
 
   /**
@@ -99,8 +104,16 @@ export function initializeGallery() {
       modalImage.alt = '';
       modalCaption.textContent = '';
 
-      // Restore background scrolling
+      // Restore background scrolling and position
+      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
 
       // Return focus to the last clicked image button
       const activeButton = document.querySelector('.gallery-image-btn:focus');
