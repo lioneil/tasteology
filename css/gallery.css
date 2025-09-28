@@ -6,11 +6,9 @@
   position: relative;
   max-width: 1146px;
   margin: 0 auto;
-  padding: var(--spacing-section) 0;
+  padding: var(--spacing-section) 8px;
   background-color: var(--color-background);
   color: var(--color-text);
-  contain: layout style;
-  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -33,7 +31,6 @@
   gap: 30px;
   min-height: 600px;
   width: 100%;
-  overflow: hidden;
 }
 
 /* Images section - contains left image and right image grid */
@@ -42,8 +39,6 @@
   grid-template-columns: 372px 372px;
   gap: 10px;
   height: 600px;
-  overflow: hidden;
-  box-sizing: border-box;
 }
 
 /* Left side - Main image (372px × 600px) */
@@ -76,7 +71,7 @@
 
 .gallery-image-btn:focus {
   outline: 2px solid var(--color-headline);
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
 /* Right images layout - second column with two rows */
@@ -93,6 +88,7 @@
   flex-direction: column;
   gap: 30px;
   width: 362px;
+  max-width: 100%;
 }
 
 /* Content section with text */
@@ -254,7 +250,7 @@
 }
 
 .gallery-modal-image {
-  max-width: 100%;
+  width: 100%;
   max-height: 80vh;
   object-fit: contain;
   display: block;
@@ -563,7 +559,6 @@
     width: 100%;
     max-width: 100%;
     grid-column: 1 / -1;
-    overflow: hidden;
     box-sizing: border-box;
   }
 
@@ -573,7 +568,6 @@
     height: 250px;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
     box-sizing: border-box;
   }
 
@@ -585,14 +579,12 @@
     height: 150px;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
     box-sizing: border-box;
   }
 
   .gallery-right-images > div {
     flex: 1;
     max-width: 100%;
-    overflow: hidden;
     box-sizing: border-box;
   }
 
@@ -636,7 +628,6 @@
     width: 100%;
     max-width: 100%;
     grid-column: 1 / -1;
-    overflow: hidden;
     box-sizing: border-box;
   }
 

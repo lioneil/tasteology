@@ -164,12 +164,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Optimize font loading */
-@font-face {
-  font-family: Primary;
-  src: url('fonts/primary.woff2') format('woff2');
-  font-display: swap;
-}
 
 /* Preload critical fonts */
 .font-loading {

@@ -1,28 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tasteology - Explore the art of cooking and taste">
-  <meta name="theme-color" content="#ffffff">
 
-  <!-- Open Graph meta tags -->
-  <meta property="og:title" content="Tasteology - What Does Cooking Mean?">
-  <meta property="og:description" content="Explore the art of cooking and taste">
+  <!-- Primary Meta Tags -->
+  <title>Tasteology - What Does Cooking Mean? | Culinary Experience</title>
+  <meta name="title" content="Tasteology - What Does Cooking Mean?">
+  <meta name="description" content="Explore the art of cooking and taste through our interactive gallery and taste experiences. Discover what cooking truly means with Hervé This, the father of molecular gastronomy.">
+  <meta name="keywords" content="cooking, molecular gastronomy, taste, culinary arts, food science, Hervé This">
+  <meta name="author" content="Tasteology">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tasteology.com">
+  <meta property="og:url" content="https://tasteology.example.com/">
+  <meta property="og:title" content="Tasteology - What Does Cooking Mean?">
+  <meta property="og:description" content="Explore the art of cooking and taste through our interactive gallery and taste experiences.">
+  <meta property="og:image" content="https://tasteology.example.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Tasteology">
 
-  <!-- Twitter Card meta tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tasteology - What Does Cooking Mean?">
-  <meta name="twitter:description" content="Explore the art of cooking and taste">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://tasteology.example.com/">
+  <meta property="twitter:title" content="Tasteology - What Does Cooking Mean?">
+  <meta property="twitter:description" content="Explore the art of cooking and taste through our interactive gallery and taste experiences.">
+  <meta property="twitter:image" content="https://tasteology.example.com/assets/twitter-image.jpg">
 
-  <!-- Title -->
-  <title>Tasteology - What Does Cooking Mean?</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="preload" href="/assets/left.webp" as="image">
+
+  <!-- DNS prefetch for external domains -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tasteology.example.com/">
+
+  <!-- Critical CSS (inlined) -->
+  <style>
+    /* Critical above-the-fold styles */
+    :root {
+      --color-background: #0e1414;
+      --color-headline: #cf1430;
+      --color-heading: #ffffff;
+      --color-text: #ffffff;
+      --color-text-light: #cccccc;
+      --color-surface: #1a2020;
+      --font-family-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-section: 7.5rem;
+      --transition-fast: 0.15s ease;
+      --transition-medium: 0.3s ease;
+      --z-index-modal: 1000;
+    }
+
+    *,*::before,*::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--font-family-primary), sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main { min-height: 100vh; }
+
+    /* Gallery Block Critical Styles */
+    .gallery-block {
+      position: relative;
+      max-width: 1146px;
+      margin: 0 auto;
+      padding: var(--spacing-section) 0;
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 30px;
+      min-height: 600px;
+      width: 100%;
+    }
+
+    .gallery-images {
+      display: grid;
+      grid-template-columns: 372px 372px;
+      gap: 10px;
+      height: 600px;
+    }
+
+    .gallery-text {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 362px;
+    }
+
+    .gallery-title {
+      font-family: var(--font-family-primary);
+      font-size: 1.875rem;
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      margin: 0;
+      border-bottom: 1px solid #ffffff;
+      padding-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .gallery-description {
+      font-family: var(--font-family-primary);
+      font-size: 1.3125rem;
+      font-weight: 300;
+      line-height: 1.43;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* Card Block Critical Styles */
+    .card-group-block {
+      max-width: 1146px;
+      margin: 0 auto;
+      padding: var(--spacing-section) var(--spacing-lg);
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+
+    .card-group-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-group-title {
+      font-family: var(--font-family-primary);
+      font-size: 1.875rem;
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      margin: 0;
+      border-bottom: 1px solid #ffffff;
+      padding-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .card-list {
+      margin-top: 60px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    /* Hide content until CSS loads to prevent FOUC */
+    .gallery-block, .card-group-block { visibility: hidden; }
+    .css-loaded .gallery-block, .css-loaded .card-group-block { visibility: visible; }
+  </style>
+
+  <!-- CSS loading strategy -->
+  <link rel="stylesheet" href="/css/main.css" onload="document.documentElement.classList.add('css-loaded')">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 </head>
 <body>
   <!-- Main content containers -->
@@ -147,7 +304,7 @@
 
         <div class="card-list">
           <!-- Red Card -->
-          <article class="card">
+          <article class="card" id="flavours-red">
             <a href="#flavours-red" class="card-link" aria-describedby="red-card-desc">
               <div class="card-image">
                 <picture>
@@ -173,7 +330,7 @@
           </article>
 
           <!-- Green Card -->
-          <article class="card">
+          <article class="card" id="flavours-green">
             <a href="#flavours-green" class="card-link" aria-describedby="green-card-desc">
               <div class="card-image">
                 <picture>
@@ -199,7 +356,7 @@
           </article>
 
           <!-- White Card -->
-          <article class="card">
+          <article class="card" id="flavours-white">
             <a href="#flavours-white" class="card-link" aria-describedby="white-card-desc">
               <div class="card-image">
                 <picture>
@@ -228,7 +385,18 @@
     </section>
   </main>
 
+  <!-- CSS loading fallback -->
+  <script>
+    // Ensure content is visible after 100ms even if CSS hasn't loaded
+    setTimeout(function() {
+      if (!document.documentElement.classList.contains('css-loaded')) {
+        document.documentElement.classList.add('css-loaded');
+      }
+    }, 100);
+  </script>
+
   <!-- JavaScript modules -->
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/performance.js"></script>
 </body>
 </html>

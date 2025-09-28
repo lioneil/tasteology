@@ -1,32 +1,53 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
   root: '.',
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: './index.html'
+    assetsDir: 'assets',
+    sourcemap: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
       }
     },
-    assetsDir: 'assets',
-    sourcemap: false,
-    minify: 'terser',
-    cssMinify: true,
-    target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari13.1']
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      },
+      output: {
+        manualChunks: {
+          gallery: ['./js/gallery.js'],
+          cards: ['./js/cards.js']
+        },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(woff|woff2|eot|ttf|otf)$/.test(assetInfo.name)) {
+            return `fonts/[name]-[hash][extname]`;
+          }
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp)$/.test(assetInfo.name)) {
+            return `images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        }
+      }
+    },
+    cssCodeSplit: true,
+    cssMinify: true
   },
   server: {
-    open: true,
     port: 3000,
-    host: '0.0.0.0'
+    host: true
   },
   preview: {
     port: 4173,
-    host: '0.0.0.0'
+    host: true
   },
-  assetsInclude: ['**/*.webp', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
-  css: {
-    devSourcemap: true
+  optimizeDeps: {
+    include: ['axe-core']
   }
 });
