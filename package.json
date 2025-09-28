@@ -16,7 +16,14 @@
     "lint:html": "html-validate index.html",
     "lint:css": "stylelint 'css/**/*.css'",
     "lint:js": "eslint 'js/**/*.js'",
-    "lint:a11y": "npm run preview & npx axe http://localhost:4173 --exit"
+    "lint:a11y": "npm run preview & npx axe http://localhost:4173 --exit",
+    "lighthouse": "npm run build && npm run preview & npm run lighthouse:run",
+    "lighthouse:run": "sleep 3 && lhci autorun --collect.startServerCommand=\"\" --collect.url=\"http://localhost:4173\" && pkill -f \"vite preview\"",
+    "lighthouse:mobile": "npm run build && npm run preview & sleep 3 && lighthouse http://localhost:4173 --preset=perf --form-factor=mobile --screenEmulation.disabled --output=html --output-path=./lighthouse-mobile.html && pkill -f \"vite preview\"",
+    "lighthouse:desktop": "npm run build && npm run preview & sleep 3 && lighthouse http://localhost:4173 --preset=perf --form-factor=desktop --screenEmulation.disabled --output=html --output-path=./lighthouse-desktop.html && pkill -f \"vite preview\"",
+    "lighthouse:both": "npm run lighthouse:mobile && npm run lighthouse:desktop",
+    "lighthouse:ci": "npm run build && lhci autorun",
+    "lighthouse:100": "npm run build && npm run preview & sleep 3 && node lighthouse-config.js && pkill -f \"vite preview\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +34,8 @@
   "license": "ISC",
   "devDependencies": {
     "@axe-core/cli": "^4.10.2",
+    "@lhci/cli": "^0.13.0",
+    "chrome-launcher": "^1.1.0",
     "eslint": "^9.36.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "html-validate": "^10.0.0",
