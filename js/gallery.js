@@ -4,10 +4,21 @@
  * Handles gallery modal functionality, image display, and accessibility features.
  */
 
+// Import high-resolution images for modal display
+import leftImageModal from '/assets/left@2x.webp';
+import rightTopImageModal from '/assets/right-top@2x.webp';
+import rightBottomImageModal from '/assets/right-bottom@2x.webp';
+
 /**
  * Initialize the gallery component
  */
 export function initializeGallery() {
+  // Create mapping of image IDs to modal image URLs
+  const modalImageMap = {
+    'left': leftImageModal,
+    'right-top': rightTopImageModal,
+    'right-bottom': rightBottomImageModal
+  };
   const modal = document.querySelector('.gallery-modal');
   const modalImage = document.getElementById('modal-image');
   const modalCaption = document.getElementById('modal-caption');
@@ -26,8 +37,10 @@ export function initializeGallery() {
       e.preventDefault();
       e.stopPropagation();
       const img = button.querySelector('.gallery-image');
-      if (img) {
-        openModal(img.src, img.alt);
+      const modalImageId = button.dataset.modalImage;
+      const modalSrc = modalImageMap[modalImageId];
+      if (img && modalSrc) {
+        openModal(modalSrc, img.alt);
       }
     });
 
@@ -36,8 +49,10 @@ export function initializeGallery() {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         const img = button.querySelector('.gallery-image');
-        if (img) {
-          openModal(img.src, img.alt);
+        const modalImageId = button.dataset.modalImage;
+        const modalSrc = modalImageMap[modalImageId];
+        if (img && modalSrc) {
+          openModal(modalSrc, img.alt);
         }
       }
     });
@@ -60,8 +75,8 @@ export function initializeGallery() {
    * @param {string} alt - Image alt text
    */
   function openModal(src, alt) {
-    // Get the higher resolution source for modal display
-    modalImage.src = src.replace('.webp', '@2x.webp');
+    // Use the provided high-resolution source for modal display
+    modalImage.src = src;
     modalImage.alt = alt;
     modalCaption.textContent = alt;
 
