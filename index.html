@@ -36,9 +36,34 @@
           <div class="gallery-left">
             <button type="button" class="gallery-image-btn" aria-label="Open large image in modal">
               <picture>
-                <source media="(min-width: 1200px)" srcset="assets/left@3x.webp 3x, assets/left@2x.webp 2x, assets/left.webp 1x">
-                <source media="(min-width: 768px)" srcset="assets/left@2x.webp 2x, assets/left.webp 1x">
-                <img src="assets/left.webp" alt="Main cooking scene with ingredients and preparation" class="gallery-image gallery-image--main" loading="lazy">
+                <source media="(min-width: 1200px)"
+                        srcset="/assets/left@3x.webp 3x,
+                                /assets/left@2x.webp 2x,
+                                /assets/left.webp 1x"
+                        type="image/webp">
+                <source media="(min-width: 768px)"
+                        srcset="/assets/left@2x.webp 2x,
+                                /assets/left.webp 1x"
+                        type="image/webp">
+                <source media="(max-width: 767px)"
+                        srcset="/assets/left@2x.webp 2x,
+                                /assets/left.webp 1x"
+                        type="image/webp">
+                <source media="(min-width: 1200px)"
+                        srcset="/assets/left@3x.jpg 3x,
+                                /assets/left@2x.jpg 2x,
+                                /assets/left.jpg 1x"
+                        type="image/jpeg">
+                <source media="(min-width: 768px)"
+                        srcset="/assets/left@2x.jpg 2x,
+                                /assets/left.jpg 1x"
+                        type="image/jpeg">
+                <img src="/assets/left.webp"
+                     alt="Main cooking scene with ingredients and preparation"
+                     class="gallery-image gallery-image--main"
+                     loading="lazy"
+                     width="400"
+                     height="300">
               </picture>
             </button>
           </div>
@@ -49,9 +74,22 @@
             <div class="gallery-top-right">
               <button type="button" class="gallery-image-btn" aria-label="Open cooking technique image in modal">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="assets/right-top@3x.webp 3x, assets/right-top@2x.webp 2x, assets/right-top.webp 1x">
-                  <source media="(min-width: 768px)" srcset="assets/right-top@2x.webp 2x, assets/right-top.webp 1x">
-                  <img src="assets/right-top.webp" alt="Close-up cooking technique demonstration" class="gallery-image gallery-image--secondary" loading="lazy">
+                  <source media="(min-width: 1200px)"
+                          srcset="/assets/right-top@3x.webp 3x,
+                                  /assets/right-top@2x.webp 2x,
+                                  /assets/right-top.webp 1x"
+                          type="image/webp">
+                  <source media="(min-width: 768px)"
+                          srcset="/assets/right-top@2x.webp 2x,
+                                  /assets/right-top.webp 1x"
+                          type="image/webp">
+                  <source srcset="/assets/right-top.jpg" type="image/jpeg">
+                  <img src="/assets/right-top.webp"
+                       alt="Close-up cooking technique demonstration"
+                       class="gallery-image gallery-image--secondary"
+                       loading="lazy"
+                       width="400"
+                       height="300">
                 </picture>
               </button>
             </div>
@@ -60,9 +98,22 @@
             <div class="gallery-bottom-right-image">
               <button type="button" class="gallery-image-btn" aria-label="Open perfect egg technique image in modal">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="assets/right-bottom@3x.webp 3x, assets/right-bottom@2x.webp 2x, assets/right-bottom.webp 1x">
-                  <source media="(min-width: 768px)" srcset="assets/right-bottom@2x.webp 2x, assets/right-bottom.webp 1x">
-                  <img src="assets/right-bottom.webp" alt="Perfect egg cooking demonstration" class="gallery-image gallery-image--secondary" loading="lazy">
+                  <source media="(min-width: 1200px)"
+                          srcset="/assets/right-bottom@3x.webp 3x,
+                                  /assets/right-bottom@2x.webp 2x,
+                                  /assets/right-bottom.webp 1x"
+                          type="image/webp">
+                  <source media="(min-width: 768px)"
+                          srcset="/assets/right-bottom@2x.webp 2x,
+                                  /assets/right-bottom.webp 1x"
+                          type="image/webp">
+                  <source srcset="/assets/right-bottom.jpg" type="image/jpeg">
+                  <img src="/assets/right-bottom.webp"
+                       alt="Perfect egg cooking demonstration"
+                       class="gallery-image gallery-image--secondary"
+                       loading="lazy"
+                       width="400"
+                       height="300">
                 </picture>
               </button>
             </div>
@@ -108,46 +159,82 @@
         <div class="card-list">
           <!-- Red Card -->
           <article class="card">
-            <a href="#red-flavours" class="card-link" target="_blank" rel="noopener noreferrer">
+            <a href="/flavours/red" class="card-link" aria-describedby="red-card-desc">
               <div class="card-image">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="assets/tight-top@3x.webp 3x, assets/tight-top@2x.webp 2x, assets/tight-top.webp 1x">
-                  <source media="(min-width: 768px)" srcset="assets/tight-top@2x.webp 2x, assets/tight-top.webp 1x">
-                  <img src="assets/tight-top.webp" alt="Red food coloring on spoon" loading="lazy">
+                  <source media="(min-width: 1200px)"
+                          srcset="/assets/tight-top@3x.webp 3x,
+                                  /assets/tight-top@2x.webp 2x,
+                                  /assets/tight-top.webp 1x"
+                          type="image/webp">
+                  <source media="(min-width: 768px)"
+                          srcset="/assets/tight-top@2x.webp 2x,
+                                  /assets/tight-top.webp 1x"
+                          type="image/webp">
+                  <source srcset="/assets/tight-top.jpg" type="image/jpeg">
+                  <img src="/assets/tight-top.webp"
+                       alt="Red food coloring on spoon"
+                       loading="lazy"
+                       width="375"
+                       height="300">
                 </picture>
               </div>
               <h3 class="card-title">RED</h3>
-              <p class="card-text">Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.</p>
+              <p class="card-text" id="red-card-desc">Red foods remind us of berries and soft fruits, so we anticipate a sweet taste.</p>
             </a>
           </article>
 
           <!-- Green Card -->
           <article class="card">
-            <a href="#green-flavours" class="card-link" target="_blank" rel="noopener noreferrer">
+            <a href="/flavours/green" class="card-link" aria-describedby="green-card-desc">
               <div class="card-image">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="assets/tight-top-2@3x.webp 3x, assets/tight-top-2@2x.webp 2x, assets/tight-top-2.webp 1x">
-                  <source media="(min-width: 768px)" srcset="assets/tight-top-2@2x.webp 2x, assets/tight-top-2.webp 1x">
-                  <img src="assets/tight-top-2.webp" alt="Green food coloring on spoon" loading="lazy">
+                  <source media="(min-width: 1200px)"
+                          srcset="/assets/tight-top-2@3x.webp 3x,
+                                  /assets/tight-top-2@2x.webp 2x,
+                                  /assets/tight-top-2.webp 1x"
+                          type="image/webp">
+                  <source media="(min-width: 768px)"
+                          srcset="/assets/tight-top-2@2x.webp 2x,
+                                  /assets/tight-top-2.webp 1x"
+                          type="image/webp">
+                  <source srcset="/assets/tight-top-2.jpg" type="image/jpeg">
+                  <img src="/assets/tight-top-2.webp"
+                       alt="Green food coloring on spoon"
+                       loading="lazy"
+                       width="375"
+                       height="300">
                 </picture>
               </div>
               <h3 class="card-title">Green</h3>
-              <p class="card-text">Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours</p>
+              <p class="card-text" id="green-card-desc">Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours</p>
             </a>
           </article>
 
           <!-- White Card -->
           <article class="card">
-            <a href="#white-flavours" class="card-link" target="_blank" rel="noopener noreferrer">
+            <a href="/flavours/white" class="card-link" aria-describedby="white-card-desc">
               <div class="card-image">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="assets/tight-top-3@3x.webp 3x, assets/tight-top-3@2x.webp 2x, assets/tight-top-3.webp 1x">
-                  <source media="(min-width: 768px)" srcset="assets/tight-top-3@2x.webp 2x, assets/tight-top-3.webp 1x">
-                  <img src="assets/tight-top-3.webp" alt="White food coloring on spoon" loading="lazy">
+                  <source media="(min-width: 1200px)"
+                          srcset="/assets/tight-top-3@3x.webp 3x,
+                                  /assets/tight-top-3@2x.webp 2x,
+                                  /assets/tight-top-3.webp 1x"
+                          type="image/webp">
+                  <source media="(min-width: 768px)"
+                          srcset="/assets/tight-top-3@2x.webp 2x,
+                                  /assets/tight-top-3.webp 1x"
+                          type="image/webp">
+                  <source srcset="/assets/tight-top-3.jpg" type="image/jpeg">
+                  <img src="/assets/tight-top-3.webp"
+                       alt="White food coloring on spoon"
+                       loading="lazy"
+                       width="375"
+                       height="300">
                 </picture>
               </div>
               <h3 class="card-title">White</h3>
-              <p class="card-text">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
+              <p class="card-text" id="white-card-desc">White foods evoke memories of salt and salty flavours, driving the expectation of a savoury treat.</p>
             </a>
           </article>
         </div>

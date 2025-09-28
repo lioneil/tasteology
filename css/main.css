@@ -23,11 +23,11 @@
   /* Typography */
   --font-family-primary: 'Open Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, sans-serif;
   --font-family-secondary: georgia, 'Times New Roman', times, serif;
-  --font-size-base: 16px;
-  --font-size-small: 14px;
-  --font-size-large: 18px;
-  --font-size-xl: 24px;
-  --font-size-xxl: 32px;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-large: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
   --line-height-base: 1.5;
   --line-height-tight: 1.2;
   --line-height-loose: 1.7;
@@ -129,8 +129,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Layout
+   Cross-Browser Compatibility & Layout
    ========================================================================== */
+
+/* CSS Grid Fallbacks */
+@supports not (display: grid) {
+  .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  /* Flexbox fallback items */
+  .card-list > * {
+    flex: 1 1 300px;
+    max-width: 400px;
+  }
+}
+
+@supports (display: grid) {
+  .gallery-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+
+/* Optimize font loading */
+@font-face {
+  font-family: Primary;
+  src: url('fonts/primary.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Preload critical fonts */
+.font-loading {
+  font-display: swap;
+}
 
 main {
   min-height: 100vh;
@@ -159,6 +205,64 @@ main {
 @media (width <= 480px) {
   .container {
     padding: 0 var(--spacing-md);
+  }
+}
+
+/* ==========================================================================
+   Performance & Loading States
+   ========================================================================== */
+
+/* Image loading states */
+img.loading {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+img.loaded {
+  filter: none;
+}
+
+img.error {
+  background-color: var(--color-surface);
+  color: var(--color-text-light);
+}
+
+/* WebP support classes */
+.webp .no-webp-fallback {
+  display: none;
+}
+
+.no-webp .webp-only {
+  display: none;
+}
+
+/* CSS Grid support classes */
+.no-css-grid .grid-fallback {
+  display: block;
+}
+
+.css-grid .grid-fallback {
+  display: none;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  :root {
+    --color-text: #ffffff;
+    --color-background: #000000;
+    --color-border: #ffffff;
   }
 }
 
