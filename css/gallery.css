@@ -4,6 +4,7 @@
 
 .gallery-block {
   position: relative;
+  width: 100%;
   max-width: 1146px;
   margin: 0 auto;
   padding: var(--spacing-section) 8px;
@@ -43,7 +44,7 @@
   box-sizing: border-box;
 }
 
-/* Simple mobile fix - stack images vertically */
+/* Mobile fix - stack all images vertically */
 @media (width <= 768px) {
   .gallery-images {
     display: block;
@@ -57,14 +58,15 @@
 
   .gallery-right-images {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     width: 100%;
+    height: auto;
   }
 
   .gallery-top-right,
   .gallery-bottom-right-image {
-    flex: 1;
-    width: 50%;
+    width: 100%;
   }
 
   .gallery-top-right .gallery-image-btn,
@@ -606,9 +608,9 @@
   .gallery-right-images {
     grid-column: 1;
     grid-row: 2 / 4;
-    flex-direction: row;
+    flex-direction: column;
     gap: 0.5rem;
-    height: 150px;
+    height: auto;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;

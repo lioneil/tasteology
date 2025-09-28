@@ -9,6 +9,9 @@ import leftImageModal from '/assets/left@2x.webp';
 import rightTopImageModal from '/assets/right-top@2x.webp';
 import rightBottomImageModal from '/assets/right-bottom@2x.webp';
 
+// Store scroll position for mobile scroll restoration
+let savedScrollPosition = 0;
+
 /**
  * Initialize the gallery component
  */
@@ -75,6 +78,9 @@ export function initializeGallery() {
    * @param {string} alt - Image alt text
    */
   function openModal(src, alt) {
+    // Store current scroll position before modifying body
+    savedScrollPosition = window.scrollY;
+
     // Use the provided high-resolution source for modal display
     modalImage.src = src;
     modalImage.alt = alt;
@@ -91,11 +97,11 @@ export function initializeGallery() {
     // Focus the close button for accessibility after animation starts
     window.setTimeout(() => closeButton.focus(), 150);
 
-    // Prevent background scrolling
+    // Prevent background scrolling - improved for mobile
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
     document.body.style.width = '100%';
-    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.top = `-${savedScrollPosition}px`;
   }
 
   /**
@@ -118,14 +124,15 @@ export function initializeGallery() {
       modalCaption.textContent = '';
 
       // Restore background scrolling and position
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
       document.body.style.top = '';
 
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      // Restore scroll position using saved value
+      if (savedScrollPosition > 0) {
+        window.scrollTo(0, savedScrollPosition);
+        savedScrollPosition = 0; // Reset for next use
       }
 
       // Return focus to the last clicked image button

@@ -74,11 +74,13 @@
 }
 
 html {
+  width: 100%;
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
 }
 
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: var(--font-family-primary);
@@ -154,11 +156,6 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: auto 1fr;
   }
-
-  .card-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
 }
 
 
@@ -169,6 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -195,6 +193,19 @@ main {
 @media (width <= 480px) {
   .container {
     padding: 0 var(--spacing-md);
+  }
+}
+
+@media (width <= 320px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Ensure all elements respect 320px width */
+  html, body, main, .gallery-block, .card-group-block {
+    width: 100% !important;
+    min-width: 320px;
+    overflow-x: hidden;
   }
 }
 

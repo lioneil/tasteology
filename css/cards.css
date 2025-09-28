@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .card-group-block {
+  width: 100%;
   max-width: 1146px;
   margin: 0 auto;
   padding: var(--spacing-section) var(--spacing-lg);
@@ -292,8 +293,8 @@
 /* Mobile Small (320px - 479px) */
 @media (width <= 479px) {
   .card-list {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     margin-top: 40px;
     gap: 60px;
   }
@@ -301,21 +302,6 @@
   .card {
     max-width: none;
     width: 100%;
-  }
-
-
-
-  /* Lollipop styles for mobile */
-  .card-image::after {
-    content: '';
-    position: absolute;
-    bottom: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 45px;
-    background-color: #8B4513;
-    border-radius: 4px;
   }
 
   .card-text {
