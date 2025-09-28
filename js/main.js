@@ -7,6 +7,7 @@
 
 import { initializeGallery } from './gallery.js';
 import { initializeCards } from './cards.js';
+import './performance.js';
 
 /**
  * Initialize the application

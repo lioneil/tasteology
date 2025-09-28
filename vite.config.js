@@ -19,11 +19,11 @@ export default defineConfig({
   server: {
     open: true,
     port: 3000,
-    host: 'localhost'
+    host: '0.0.0.0'
   },
   preview: {
     port: 4173,
-    host: 'localhost'
+    host: '0.0.0.0'
   },
   assetsInclude: ['**/*.webp', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
   css: {
