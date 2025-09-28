@@ -12,6 +12,11 @@ tasks
 .DS_Store
 CLAUDE.md
 
+# IDEs
+.idea
+.vscode
+.claude
+
 # yarn v3
 .pnp.*
 .yarn/*
