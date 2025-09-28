@@ -149,12 +149,46 @@ npm run a11y         # pa11y accessibility testing
 #### Performance Analysis
 
 ```bash
-lighthouse http://localhost:4173 --output html --output-path ./lighthouse-report.html
+# Quick lighthouse audit (requires Chrome browser)
+npm run lighthouse
+
+# Desktop-only audit
+npm run lighthouse:desktop
+
+# Mobile-only audit
+npm run lighthouse:mobile
+
+# Run both mobile and desktop audits
+npm run lighthouse:both
+
+# Comprehensive audit targeting 100% scores
+npm run lighthouse:100
+
+# Lighthouse CI (for automated testing)
+npm run lighthouse:ci
+```
+
+**Manual Lighthouse Testing:**
+
+```bash
+# 1. Build and start preview server
+npm run build
+npm run preview
+
+# 2. Run lighthouse on the preview URL (usually localhost:4173)
+npx lighthouse http://localhost:4173 --output html --output-path ./lighthouse-report.html
+
+# 3. For desktop testing with proper screen emulation
+npx lighthouse http://localhost:4173 --form-factor=desktop --screenEmulation.mobile=false --output html --output-path ./lighthouse-desktop.html
+
+# 4. For mobile testing
+npx lighthouse http://localhost:4173 --form-factor=mobile --output html --output-path ./lighthouse-mobile.html
 ```
 
 - **Tool**: Lighthouse
 - **Purpose**: Performance, accessibility, SEO, and best practices analysis
 - **Metrics**: Core Web Vitals, accessibility score, SEO optimization
+- **Reports**: Generated as HTML files for detailed analysis
 
 ### Comprehensive Quality Check
 

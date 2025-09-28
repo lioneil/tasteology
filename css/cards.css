@@ -144,7 +144,6 @@
 
 /* Medium Desktop / Large Tablet Landscape */
 @media (width <= 1200px) {
-
   .card {
     width: 310px;
   }
@@ -161,7 +160,6 @@
 
 /* Tablet Portrait / Small Desktop */
 @media (width <= 1024px) {
-
   .card {
     width: 280px;
   }
@@ -178,7 +176,6 @@
 
 /* Large Mobile Landscape / Small Tablet */
 @media (width <= 900px) {
-
   .card {
     width: 250px;
   }

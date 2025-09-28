@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-bg { fill: #0e1414; }
+      .icon-text { fill: #cf1430; font-family: Arial, sans-serif; font-weight: bold; }
+    </style>
+  </defs>
+  <rect class="icon-bg" width="32" height="32" rx="4"/>
+  <text class="icon-text" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-size="18">T</text>
+</svg>

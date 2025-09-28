@@ -1,7 +1,7 @@
 // Lighthouse configuration for mobile and desktop testing
-const lighthouse = require('lighthouse');
-const chromeLauncher = require('chrome-launcher');
-const fs = require('fs');
+import lighthouse from 'lighthouse';
+import * as chromeLauncher from 'chrome-launcher';
+import fs from 'fs';
 
 async function runLighthouse(url, options, config) {
   const chrome = await chromeLauncher.launch({
@@ -16,7 +16,7 @@ async function runLighthouse(url, options, config) {
 }
 
 async function runTests() {
-  const url = 'http://localhost:4173';
+  const url = 'http://localhost:4178';
 
   console.log('🚀 Running Lighthouse tests for 100% scores...\n');
 
@@ -105,4 +105,7 @@ async function runTests() {
   }
 }
 
-module.exports = { runTests };
+// Run the tests
+runTests().then(() => {
+  console.log('✅ Lighthouse tests complete!');
+}).catch(console.error);

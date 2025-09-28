@@ -11,7 +11,9 @@ export default [
       globals: {
         window: 'readonly',
         document: 'readonly',
-        console: 'readonly'
+        console: 'readonly',
+        performance: 'readonly',
+        PerformanceObserver: 'readonly'
       }
     },
     rules: {
