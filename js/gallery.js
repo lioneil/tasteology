@@ -61,9 +61,7 @@ export function initializeGallery() {
    */
   function openModal(src, alt) {
     // Get the higher resolution source for modal display
-    const higherResSrc = src.replace('.webp', '@2x.webp');
-
-    modalImage.src = higherResSrc;
+    modalImage.src = src.replace('.webp', '@2x.webp');
     modalImage.alt = alt;
     modalCaption.textContent = alt;
 
